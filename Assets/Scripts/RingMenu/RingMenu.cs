@@ -79,22 +79,33 @@ public class RingMenu : MonoBehaviour
             {
                 playerController.semilla = false;
                 playerController.bugia = true;
+                playerController.cosecha = false;
+
             }
             if (activeElement == 1)
             {
                 playerController.bugia = false;
-
+                playerController.cosecha = false;
                 playerController.semilla = true;
 
             }
             if (activeElement == 2)
             {
-                playerController.semilla = false;
+                playerController.cosecha = true;
                 playerController.bugia = false;
+                playerController.semilla = false;
+               
             }
             if (activeElement == 3)
             {
-                playerController.bugia = true;
+                playerController.semilla = false;
+                playerController.bugia = false;
+                playerController.cosecha = false;
+            }
+            if (activeElement == 4)
+            {
+                
+
             }
             playerAnimator.SetTrigger(ringAnimations[activeElement].name);
             gameObject.SetActive(false);

@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     public float rotmax;
     public float rotMin;
     bool mouseVisible = false;
+    //inventario
+    public ManagerObjects managerItems;   
     
     //Para Controlar La al Player
     CharacterController cc;
@@ -34,6 +36,11 @@ public class PlayerController : MonoBehaviour
     Transform instanPosition;
     public Vector3 offset;
     public Material plantado;
+
+    //Herramienta 3
+    public bool cosecha = false;
+    public Material tierra;
+    
 
 
     private void Awake()
@@ -117,11 +124,23 @@ public class PlayerController : MonoBehaviour
                    
                         Instantiate(semillaPref, instanPosition.position + offset, Quaternion.identity);
                         hit.collider.gameObject.GetComponent<MeshRenderer>().material = plantado;
-
+                       
+                    }
+                }
+                //Cosechar
+                if (cosecha)
+                {
+                    if (hit.collider.CompareTag("CosechableRueda1"))
+                    {
+                        managerItems.Ruedas[0]++;
+                        Destroy(hit.collider.gameObject);
+                    }
+                    if (hit.collider.CompareTag("Plantable"))
+                    {
+                        hit.collider.gameObject.GetComponent<MeshRenderer>().material = tierra;
                     }
                 }
                
-
 
             }
 

@@ -9,6 +9,7 @@ TagManager:
   - RuedaInicio
   - RuedaMedio
   - RuedaCompleta
+  - CosechableRueda1
   layers:
   - Default
   - TransparentFX
