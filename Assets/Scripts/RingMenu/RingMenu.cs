@@ -107,7 +107,7 @@ public class RingMenu : MonoBehaviour
                 
 
             }
-            playerAnimator.SetTrigger(ringAnimations[activeElement].name);
+           // playerAnimator.SetTrigger(ringAnimations[activeElement].name);
             gameObject.SetActive(false);
         }
     }

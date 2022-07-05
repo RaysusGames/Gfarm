@@ -6,6 +6,7 @@ using Cinemachine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Player Mouse")] 
     public CinemachineVirtualCameraBase cam;
     public float speedH;
     public float speedV;
@@ -15,9 +16,13 @@ public class PlayerController : MonoBehaviour
     public float rotMin;
     bool mouseVisible = false;
     //inventario
-    public ManagerObjects managerItems;   
-    
+    [Header("Inventario")]
+
+    public ManagerObjects managerItems;
+
     //Para Controlar La al Player
+    [Header("Player Controller")]
+
     CharacterController cc;
     
 
@@ -25,10 +30,13 @@ public class PlayerController : MonoBehaviour
     public float jump;
     public float gravity;
     Vector3 mov = Vector3.zero;
+    [Header("Herramienta 1")]
+
     //herramienta 1
     public bool bugia = false;
    
     public Material bugiaMaterial;
+    [Header("Herramienta 2")]
 
     //herramienta 2
     public bool semilla = false;
@@ -36,12 +44,17 @@ public class PlayerController : MonoBehaviour
     Transform instanPosition;
     public Vector3 offset;
     public Material plantado;
+    [Header("Herramienta 3")]
 
     //Herramienta 3
     public bool cosecha = false;
     public Material tierra;
-    
 
+    [Header("GameCar")]
+
+    // Si entra en game
+    public bool onGameCar;
+    public GameObject camCar,camNormal;
 
     private void Awake()
     {
@@ -56,6 +69,26 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (onGameCar)
+        {
+            speedMov = 0;
+            speedH = 0;
+            speedV = 0;
+            Cursor.visible = true;
+            camCar.SetActive(true);
+            camNormal.SetActive(false);
+
+
+        }
+        else if (!onGameCar)
+        {
+            speedMov = 6;
+            speedH = 3;
+            speedV = 3;
+            camCar.SetActive(false);
+            camNormal.SetActive(true);
+        }
+
         Raycast();
 
      /*  if (!mouseVisible)
@@ -138,6 +171,7 @@ public class PlayerController : MonoBehaviour
                     if (hit.collider.CompareTag("Plantable"))
                     {
                         hit.collider.gameObject.GetComponent<MeshRenderer>().material = tierra;
+                        hit.collider.tag = "Tierra";
                     }
                 }
                
