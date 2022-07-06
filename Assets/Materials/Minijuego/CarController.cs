@@ -10,6 +10,8 @@ public class CarController : MonoBehaviour
     public  TextMeshPro  textMarcador,textGear;
     public Transform marcador;
     public PlayerController player;
+    public Rigidbody rbPlayer;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -21,33 +23,41 @@ public class CarController : MonoBehaviour
     {
         textMarcador.SetText(speed.ToString("000"));
         textGear.SetText(gear.ToString("0"));
-
+       
         // Marchas
         if (gear == 1)
         {
+      
             if (speed >=20)
             {
+               
                 speed = 20;
+                
             }
             
         }
         else if(gear == 2)
         {
+            
             if (speed >= 40)
             {
+            
                 speed = 40;
             }
 
         }
         else if (gear == 3)
         {
+           
             if (speed >= 80)
             {
+                
                 speed = 80;
             }
         }
         else if (gear == 4)
         {
+        
             if (speed >= 120)
             {
                 speed = 120;
@@ -65,7 +75,7 @@ public class CarController : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             speed += 12f * Time.deltaTime;
-
+            rbPlayer.AddForce(Vector3.right * speed * Time.deltaTime);
 
 
             speedMarcha += 80f *Time.deltaTime;
