@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class RingMenu : MonoBehaviour
 {
     public RingAnimation[] ringAnimations;
@@ -12,7 +13,11 @@ public class RingMenu : MonoBehaviour
     private float degreesPerPiece;
     private float gapDegrees = 2f;
     public PlayerController playerController;
-  
+
+    // Herramientas
+    public GameObject H1,H2,H3,H4;
+
+
     private void Start()
     {
         
@@ -80,6 +85,8 @@ public class RingMenu : MonoBehaviour
                 playerController.semilla = false;
                 playerController.bugia = true;
                 playerController.cosecha = false;
+                //Herramientas
+                H1.SetActive(true);
 
             }
             if (activeElement == 1)
@@ -87,6 +94,8 @@ public class RingMenu : MonoBehaviour
                 playerController.bugia = false;
                 playerController.cosecha = false;
                 playerController.semilla = true;
+                //Herramientas
+                H1.SetActive(false);
 
             }
             if (activeElement == 2)
@@ -94,13 +103,17 @@ public class RingMenu : MonoBehaviour
                 playerController.cosecha = true;
                 playerController.bugia = false;
                 playerController.semilla = false;
-               
+                //Herramientas
+                H1.SetActive(false);
+
             }
             if (activeElement == 3)
             {
                 playerController.semilla = false;
                 playerController.bugia = false;
                 playerController.cosecha = false;
+                //Herramientas
+                H1.SetActive(false);
             }
             if (activeElement == 4)
             {

@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
 
     //herramienta 1
     public bool bugia = false;
+    public Animator animH1;
    
     public Material bugiaMaterial;
     [Header("Herramienta 2")]
@@ -69,6 +70,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        animEject();
         if (onGameCar)
         {
             speedMov = 0;
@@ -125,7 +127,22 @@ public class PlayerController : MonoBehaviour
 
 
     }
+    void animEject()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            if (bugia)
+            {
+               
+                animH1.SetBool("Ara", true);
+            }
 
+        }
+        else
+        {
+            animH1.SetBool("Ara", false);
+        }
+    }
     void Raycast()
     {
 
@@ -138,15 +155,20 @@ public class PlayerController : MonoBehaviour
                 //Bugia
                 if (bugia)
                 {
+                   
                     if (hit.collider.CompareTag("Tierra"))
                     {
+                       
                         GameObject change = hit.collider.gameObject;
                         change.tag = "Plantable";
                         hit.collider.gameObject.GetComponent<MeshRenderer>().material = bugiaMaterial;
-                      
+
 
                     }
+                                      
+
                 }
+               
                 //Plantar
                 if (semilla)
                 {
