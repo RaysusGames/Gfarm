@@ -99,14 +99,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d81bfc48d13c6aa4b9cdebccfc99346c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dias: 0
   estado1: {fileID: 0}
   estado2: {fileID: 0}
   estado3: {fileID: 0}
   diasEstadoMedio: 2
   diasEstadoComplete: 3
   tipoRuedas: 0
-  cosechable: 0
+  Minute: 0
+  Hour: 0
+  Dias: 0
+  timer: 0
+  on: 0
+  tagUsable: CosechableRueda1
 --- !u!1001 &3357581821785785373
 PrefabInstance:
   m_ObjectHideFlags: 0

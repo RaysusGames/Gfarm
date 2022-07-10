@@ -19,6 +19,8 @@ public class RuedaPlantada : MonoBehaviour
     [SerializeField]private float timer;
 
     public bool on;
+
+    public string tagUsable;
     // Start is called before the first frame update
     void Start()
     {
@@ -77,7 +79,7 @@ public class RuedaPlantada : MonoBehaviour
                 estado2.SetActive(false);
                 estado3.SetActive(true);
                 on = false;
-                this.gameObject.tag = "CosechableRueda1";
+                this.gameObject.tag = tagUsable;
                 
             }
 

@@ -41,10 +41,13 @@ public class PlayerController : MonoBehaviour
 
     //herramienta 2
     public bool semilla = false;
-    public GameObject semillaPref;
+    public GameObject[] semillaPref;
     Transform instanPosition;
     public Vector3 offset;
     public Material plantado;
+    public int tipo;
+    public GameObject text;
+    public GameObject textPref;
     [Header("Herramienta 3")]
 
     //Herramienta 3
@@ -57,6 +60,12 @@ public class PlayerController : MonoBehaviour
     public bool onGameCar;
     public GameObject camCar,camNormal;
 
+    [Header("Tutorial")]
+    public GameObject dirigete;
+    public GameObject pressTab;
+
+    public Transform insTutorial;
+
     private void Awake()
     {
         Cursor.visible = false;
@@ -65,11 +74,16 @@ public class PlayerController : MonoBehaviour
     {
         //Cursor.lockState = CursorLockMode.Locked;
         cc = GetComponent<CharacterController>();
+        Instantiate(dirigete, insTutorial);
+
     }
 
 
     void Update()
     {
+        //tuto
+        
+
         animEject();
         if (onGameCar)
         {
@@ -174,12 +188,41 @@ public class PlayerController : MonoBehaviour
                 {
                     if (hit.collider.CompareTag("Plantable"))
                     {
-                      
-                        instanPosition = hit.collider.gameObject.transform;
-                   
-                        Instantiate(semillaPref, instanPosition.position + offset, Quaternion.identity);
-                        hit.collider.gameObject.GetComponent<MeshRenderer>().material = plantado;
-                       
+                        if (tipo == 1 && managerItems.ruedasSiembra[0]>=1)
+                        {
+                            instanPosition = hit.collider.gameObject.transform;
+
+                            Instantiate(semillaPref[0], instanPosition.position + offset, Quaternion.identity);
+                            hit.collider.gameObject.GetComponent<MeshRenderer>().material = plantado;
+                            managerItems.ruedasSiembra[0] -= 1;
+                        }
+                        else if (tipo==1 && managerItems.ruedasSiembra[0] <= 0)
+                        {
+                            Instantiate(textPref, text.transform);
+                        }
+                         
+                        
+                        if (tipo == 2&& managerItems.chasisSiembra[0] >= 1)
+                        {
+                            instanPosition = hit.collider.gameObject.transform;
+
+                            Instantiate(semillaPref[1], instanPosition.position + offset, Quaternion.identity);
+                            hit.collider.gameObject.GetComponent<MeshRenderer>().material = plantado;
+                            managerItems.chasisSiembra[0] -= 1;
+                        }
+                        else if (tipo == 2)
+                        {
+                            Instantiate(textPref, text.transform);
+                        }
+                        if (tipo == 3 )
+                        {
+                            instanPosition = hit.collider.gameObject.transform;
+
+                            Instantiate(semillaPref[1], instanPosition.position + offset, Quaternion.identity);
+                            hit.collider.gameObject.GetComponent<MeshRenderer>().material = plantado;
+                        }
+
+
                     }
                 }
                 //Cosechar
@@ -188,6 +231,11 @@ public class PlayerController : MonoBehaviour
                     if (hit.collider.CompareTag("CosechableRueda1"))
                     {
                         managerItems.Ruedas[0]++;
+                        Destroy(hit.collider.gameObject);
+                    }
+                    if (hit.collider.CompareTag("CarroceriaLista1"))
+                    {
+                        managerItems.Carroseria[0]++;
                         Destroy(hit.collider.gameObject);
                     }
                     if (hit.collider.CompareTag("Plantable"))

@@ -91,15 +91,12 @@ public class RingMenu : MonoBehaviour
             }
             if (activeElement == 1)
             {
-                playerController.bugia = false;
-                playerController.cosecha = false;
-                playerController.semilla = true;
-                //Herramientas
-                H1.SetActive(false);
-
+              
+                //Agua
             }
             if (activeElement == 2)
             {
+                //Cosecha
                 playerController.cosecha = true;
                 playerController.bugia = false;
                 playerController.semilla = false;
@@ -109,18 +106,30 @@ public class RingMenu : MonoBehaviour
             }
             if (activeElement == 3)
             {
-                playerController.semilla = false;
-                playerController.bugia = false;
-                playerController.cosecha = false;
-                //Herramientas
-                H1.SetActive(false);
+                
             }
             if (activeElement == 4)
             {
-                
+                //motor
+                playerController.bugia = false;
+                playerController.cosecha = false;
+                playerController.semilla = true;
+                playerController.tipo = 2;
+                //Herramientas
+                H1.SetActive(false);
 
             }
-           // playerAnimator.SetTrigger(ringAnimations[activeElement].name);
+            if (activeElement == 5)
+            {
+                playerController.bugia = false;
+                playerController.cosecha = false;
+                playerController.semilla = true;
+                playerController.tipo = 1;
+                //Herramientas
+                H1.SetActive(false);
+
+            }
+            // playerAnimator.SetTrigger(ringAnimations[activeElement].name);
             gameObject.SetActive(false);
         }
     }
