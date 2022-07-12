@@ -6,6 +6,9 @@ using Cinemachine;
 
 public class PlayerController : MonoBehaviour
 {
+    public Animator ChangeArma;
+
+
     [Header("Player Mouse")] 
     public CinemachineVirtualCameraBase cam;
     public float speedH;
@@ -51,9 +54,10 @@ public class PlayerController : MonoBehaviour
     [Header("Herramienta 3")]
 
     //Herramienta 3
+    
     public bool cosecha = false;
     public Material tierra;
-
+    public Animator animH2;
     [Header("GameCar")]
 
     // Si entra en game
@@ -145,6 +149,8 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
+
+           
             if (bugia)
             {
                
@@ -154,7 +160,22 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+
             animH1.SetBool("Ara", false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            if (cosecha)
+            {
+
+                animH2.SetBool("Cosecha", true);
+            }
+
+        }
+        else
+        {
+            animH2.SetBool("Cosecha", false);
         }
     }
     void Raycast()
@@ -169,7 +190,7 @@ public class PlayerController : MonoBehaviour
                 //Bugia
                 if (bugia)
                 {
-                   
+
                     if (hit.collider.CompareTag("Tierra"))
                     {
                        
@@ -218,7 +239,7 @@ public class PlayerController : MonoBehaviour
                         {
                             instanPosition = hit.collider.gameObject.transform;
 
-                            Instantiate(semillaPref[1], instanPosition.position + offset, Quaternion.identity);
+                            Instantiate(semillaPref[2], instanPosition.position + offset, Quaternion.identity);
                             hit.collider.gameObject.GetComponent<MeshRenderer>().material = plantado;
                         }
 
@@ -228,15 +249,22 @@ public class PlayerController : MonoBehaviour
                 //Cosechar
                 if (cosecha)
                 {
+                    ChangeArma.SetBool("Change", true);
+
                     if (hit.collider.CompareTag("CosechableRueda1"))
                     {
                         managerItems.Ruedas[0]++;
-                        Destroy(hit.collider.gameObject);
+                        Destroy(hit.collider.gameObject,0.6f);
                     }
                     if (hit.collider.CompareTag("CarroceriaLista1"))
                     {
                         managerItems.Carroseria[0]++;
-                        Destroy(hit.collider.gameObject);
+                        Destroy(hit.collider.gameObject, 0.6f);
+                    }
+                    if (hit.collider.CompareTag("MotorLista1"))
+                    {
+                        managerItems.Carroseria[0]++;
+                        Destroy(hit.collider.gameObject, 0.6f);
                     }
                     if (hit.collider.CompareTag("Plantable"))
                     {

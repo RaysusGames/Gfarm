@@ -13,11 +13,11 @@ public class RingMenu : MonoBehaviour
     private float degreesPerPiece;
     private float gapDegrees = 2f;
     public PlayerController playerController;
-
+   
     // Herramientas
     public GameObject H1,H2,H3,H4;
-
-
+    public Animator ChangeArma;
+    public bool cambio;
     private void Start()
     {
         
@@ -82,13 +82,17 @@ public class RingMenu : MonoBehaviour
         {
             if (activeElement ==0)
             {
+                ChangeArma.SetInteger("Changeh", 1);
                 playerController.semilla = false;
                 playerController.bugia = true;
                 playerController.cosecha = false;
                 //Herramientas
                 H1.SetActive(true);
-
+               H2.SetActive(false);
+              
+               
             }
+
             if (activeElement == 1)
             {
               
@@ -96,27 +100,40 @@ public class RingMenu : MonoBehaviour
             }
             if (activeElement == 2)
             {
+                ChangeArma.SetInteger("Changeh", 2);
                 //Cosecha
                 playerController.cosecha = true;
                 playerController.bugia = false;
                 playerController.semilla = false;
                 //Herramientas
                 H1.SetActive(false);
+                H2.SetActive(true);
+              
+               
 
             }
             if (activeElement == 3)
             {
-                
+                playerController.bugia = false;
+                playerController.cosecha = false;
+                playerController.semilla = true;
+                playerController.tipo = 3;
+                //Herramientas
+                H1.SetActive(false);
+                H2.SetActive(false);
             }
             if (activeElement == 4)
             {
-                //motor
+                //Chasis
+
                 playerController.bugia = false;
                 playerController.cosecha = false;
                 playerController.semilla = true;
                 playerController.tipo = 2;
                 //Herramientas
                 H1.SetActive(false);
+                H2.SetActive(false);
+                
 
             }
             if (activeElement == 5)
@@ -127,11 +144,13 @@ public class RingMenu : MonoBehaviour
                 playerController.tipo = 1;
                 //Herramientas
                 H1.SetActive(false);
-
+                H2.SetActive(false);
+               
             }
             // playerAnimator.SetTrigger(ringAnimations[activeElement].name);
             gameObject.SetActive(false);
         }
+      
     }
 
     // Función para normalizar el ángulo

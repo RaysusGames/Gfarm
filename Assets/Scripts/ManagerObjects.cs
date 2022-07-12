@@ -9,6 +9,8 @@ public class ManagerObjects : MonoBehaviour
     public int[] Motor;
     public int[] ruedasSiembra;
     public int[] chasisSiembra;
+    public int[] motorSiembra;
+
     public GameObject Inventario;
     public TextMeshPro[] Text;
     public TextMeshPro[] TextSiembra;
@@ -26,10 +28,12 @@ public class ManagerObjects : MonoBehaviour
         {
             TextSiembra[0].SetText(ruedasSiembra[0].ToString("X000"));
             TextSiembra[1].SetText(chasisSiembra[0].ToString("X000"));
+            TextSiembra[2].SetText(motorSiembra[0].ToString("X000"));
+
 
             Text[0].SetText(Ruedas[0].ToString("X000"));
             Text[1].SetText(Carroseria[0].ToString("X000"));
-
+            Text[2].SetText(Motor[0].ToString("X000"));
             Inventario.SetActive(true);
             cruceta.SetActive(false);
 

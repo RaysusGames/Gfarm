@@ -11,6 +11,7 @@ TagManager:
   - RuedaCompleta
   - CosechableRueda1
   - CarroceriaLista1
+  - MotorLista1
   layers:
   - Default
   - TransparentFX

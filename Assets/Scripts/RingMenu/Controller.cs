@@ -7,13 +7,14 @@ public class Controller : MonoBehaviour
 
     public GameObject animationRing;
     public PlayerController playerController;
+ 
 
 
-   
 
 
-// Update is called once per frame
-void Update()
+
+    // Update is called once per frame
+    void Update()
     {
         if(Input.GetKeyDown(KeyCode.Tab))
         {
@@ -22,7 +23,7 @@ void Update()
             playerController.speedV = 0;
             Cursor.lockState = CursorLockMode.None;
            Cursor.visible = true;
-        
+           
         }
 
         if(Input.GetKeyUp(KeyCode.Tab))
@@ -32,7 +33,7 @@ void Update()
             playerController.speedV = 3;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-
+           
         }
 
     }
