@@ -216,6 +216,7 @@ public class PlayerController : MonoBehaviour
                             Instantiate(semillaPref[0], instanPosition.position + offset, Quaternion.identity);
                             hit.collider.gameObject.GetComponent<MeshRenderer>().material = plantado;
                             managerItems.ruedasSiembra[0] -= 1;
+                            PlayerPrefs.SetInt("Wheels_Seeds", managerItems.ruedasSiembra[0]);
                         }
                         else if (tipo==1 && managerItems.ruedasSiembra[0] <= 0)
                         {
@@ -230,6 +231,7 @@ public class PlayerController : MonoBehaviour
                             Instantiate(semillaPref[1], instanPosition.position + offset, Quaternion.identity);
                             hit.collider.gameObject.GetComponent<MeshRenderer>().material = plantado;
                             managerItems.chasisSiembra[0] -= 1;
+                            PlayerPrefs.SetInt("Chassis_Seeds", managerItems.chasisSiembra[0]);
                         }
                         else if (tipo == 2)
                         {
@@ -242,6 +244,7 @@ public class PlayerController : MonoBehaviour
                             Instantiate(semillaPref[2], instanPosition.position + offset, Quaternion.identity);
                             hit.collider.gameObject.GetComponent<MeshRenderer>().material = plantado;
                             managerItems.motorSiembra[0] -= 1;
+                            PlayerPrefs.SetInt("Engines_Seeds", managerItems.motorSiembra[0]);
                         }
                         else if (tipo == 2)
                         {
@@ -259,16 +262,19 @@ public class PlayerController : MonoBehaviour
                     if (hit.collider.CompareTag("CosechableRueda1"))
                     {
                         managerItems.Ruedas[0]++;
+                        PlayerPrefs.SetInt("Wheels", managerItems.Ruedas[0]);
                         Destroy(hit.collider.gameObject,0.6f);
                     }
                     if (hit.collider.CompareTag("CarroceriaLista1"))
                     {
                         managerItems.Carroseria[0]++;
+                        PlayerPrefs.SetInt("Chassis", managerItems.Carroseria[0]);
                         Destroy(hit.collider.gameObject, 0.6f);
                     }
                     if (hit.collider.CompareTag("MotorLista1"))
                     {
                         managerItems.Motor[0]++;
+                        PlayerPrefs.SetInt("Engines", managerItems.Motor[0]);
                         Destroy(hit.collider.gameObject, 0.6f);
                     }
                     if (hit.collider.CompareTag("Plantable"))
@@ -277,13 +283,7 @@ public class PlayerController : MonoBehaviour
                         hit.collider.tag = "Tierra";
                     }
                 }
-               
-
             }
-
-
-
-
         }
     }
 

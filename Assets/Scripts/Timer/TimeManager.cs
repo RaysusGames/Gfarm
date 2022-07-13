@@ -16,33 +16,38 @@ public class TimeManager : MonoBehaviour
     private float minuteToRealTime = 0.5f;
     private float timer;
 
-    // Start is called before the first frame update
     void Start()
     {
-        Minute = 0;
-        Hour = 22;
-        Dias = 0;
+        //PlayerPrefs.DeleteAll();
+        Minute = PlayerPrefs.GetInt("Date_Minutes");
+        Hour = PlayerPrefs.GetInt("Date_Hours");
+        Dias = PlayerPrefs.GetInt("Date_Days");
         timer = minuteToRealTime;
     }
 
-    // Update is called once per frame
     void Update()
     {
         timer -=Time.deltaTime *10;
         if (timer <=0)
         {
             Minute++;
+            PlayerPrefs.SetInt("Date_Minutes", Minute);
             OnMinuteChanged?.Invoke();
             if(Minute >=60)
             {
                 Hour++;
+                PlayerPrefs.SetInt("Date_Hours", Hour);
                 Minute = 0;
+                PlayerPrefs.SetInt("Date_Minutes", Minute);
                 OnHourChanged?.Invoke();
                 if (Hour>=24)
                 {
                     Dias++;
+                    PlayerPrefs.SetInt("Date_Days", Dias);
                     Hour = 0;
+                    PlayerPrefs.SetInt("Date_Hours", Hour);
                     Minute = 0;
+                    PlayerPrefs.SetInt("Date_Minutes", Minute);
                     OnDiasChanged?.Invoke();
                 }
             }

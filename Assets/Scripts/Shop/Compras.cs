@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Compras : MonoBehaviour
 {
-    
     public Diner diner;
 
     [Header("TipoDeObjeto")]
@@ -14,13 +13,6 @@ public class Compras : MonoBehaviour
     public ManagerObjects inventario;
     public Animator animsObject;
        
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -30,23 +22,25 @@ public class Compras : MonoBehaviour
                 animsObject.SetBool("Ruedas", true);
                 diner.RestDinner(900);
                 inventario.ruedasSiembra[0] = 4;
+                PlayerPrefs.SetInt("Wheels_Seeds", inventario.ruedasSiembra[0]);
             }
             if (capo && diner.diner >= 1000)
             {
                 animsObject.SetBool("Chasis", true);
                 diner.RestDinner(1000);
                 inventario.chasisSiembra[0] = 1;
+                PlayerPrefs.SetInt("Chassis_Seeds", inventario.chasisSiembra[0]);
             }
             if (motor && diner.diner >= 1100)
             {
                 animsObject.SetBool("Motor", true);
                 diner.RestDinner(1000);
                 inventario.motorSiembra[0] = 1;
+                PlayerPrefs.SetInt("Engines_Seeds", inventario.motorSiembra[0]);
             }
         }
-       
-        
     }
+
     private void OnTriggerExit(Collider other)
     {
         animsObject.SetBool("Chasis", false);

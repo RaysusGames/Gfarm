@@ -15,13 +15,18 @@ public class ManagerObjects : MonoBehaviour
     public TextMeshPro[] Text;
     public TextMeshPro[] TextSiembra;
     public GameObject cruceta;
-    // Start is called before the first frame update
-    void Start()
-    {
 
+    private void Start()
+    {
+        Motor[0] = PlayerPrefs.GetInt("Engines");
+        Ruedas[0] = PlayerPrefs.GetInt("Wheels");
+        Carroseria[0] = PlayerPrefs.GetInt("Chassis");
+
+        motorSiembra[0] = PlayerPrefs.GetInt("Engines_Seeds");
+        ruedasSiembra[0] = PlayerPrefs.GetInt("Wheels_Seeds");
+        chasisSiembra[0] = PlayerPrefs.GetInt("Chassis_Seeds");
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
@@ -30,20 +35,17 @@ public class ManagerObjects : MonoBehaviour
             TextSiembra[1].SetText(chasisSiembra[0].ToString("X000"));
             TextSiembra[2].SetText(motorSiembra[0].ToString("X000"));
 
-
             Text[0].SetText(Ruedas[0].ToString("X000"));
             Text[1].SetText(Carroseria[0].ToString("X000"));
             Text[2].SetText(Motor[0].ToString("X000"));
             Inventario.SetActive(true);
             cruceta.SetActive(false);
-
         }
 
         if (Input.GetKeyUp(KeyCode.I))
         {
             Inventario.SetActive(false);
             cruceta.SetActive(true);   
-
         }
     }
 }
