@@ -235,12 +235,17 @@ public class PlayerController : MonoBehaviour
                         {
                             Instantiate(textPref, text.transform);
                         }
-                        if (tipo == 3 )
+                        if (tipo == 3 && managerItems.motorSiembra[0]>=1)
                         {
                             instanPosition = hit.collider.gameObject.transform;
 
                             Instantiate(semillaPref[2], instanPosition.position + offset, Quaternion.identity);
                             hit.collider.gameObject.GetComponent<MeshRenderer>().material = plantado;
+                            managerItems.motorSiembra[0] -= 1;
+                        }
+                        else if (tipo == 2)
+                        {
+                            Instantiate(textPref, text.transform);
                         }
 
 
@@ -263,7 +268,7 @@ public class PlayerController : MonoBehaviour
                     }
                     if (hit.collider.CompareTag("MotorLista1"))
                     {
-                        managerItems.Carroseria[0]++;
+                        managerItems.Motor[0]++;
                         Destroy(hit.collider.gameObject, 0.6f);
                     }
                     if (hit.collider.CompareTag("Plantable"))

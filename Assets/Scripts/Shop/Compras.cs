@@ -37,6 +37,12 @@ public class Compras : MonoBehaviour
                 diner.RestDinner(1000);
                 inventario.chasisSiembra[0] = 1;
             }
+            if (motor && diner.diner >= 1100)
+            {
+                animsObject.SetBool("Motor", true);
+                diner.RestDinner(1000);
+                inventario.motorSiembra[0] = 1;
+            }
         }
        
         
@@ -45,6 +51,7 @@ public class Compras : MonoBehaviour
     {
         animsObject.SetBool("Chasis", false);
         animsObject.SetBool("Ruedas", false);
+        animsObject.SetBool("Motor", false);
     }
 
 }
