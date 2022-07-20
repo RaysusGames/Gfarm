@@ -51,10 +51,14 @@ public class PlayerController : MonoBehaviour
     public int tipo;
     public GameObject text;
     public GameObject textPref;
-    [Header("Herramienta 3")]
+    public Animator animH3;
+    public Animator animH4;
+    public Animator animH5;
 
+
+    [Header("Herramienta 3")]
     //Herramienta 3
-    
+
     public bool cosecha = false;
     public Material tierra;
     public Animator animH2;
@@ -70,6 +74,9 @@ public class PlayerController : MonoBehaviour
 
     public Transform insTutorial;
 
+    [Header("Herramienta 4")]
+    public bool bidon = false;
+    public Animator animh6;
     private void Awake()
     {
         Cursor.visible = false;
@@ -177,6 +184,66 @@ public class PlayerController : MonoBehaviour
         {
             animH2.SetBool("Cosecha", false);
         }
+
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            if (semilla && tipo == 1)
+            {
+
+                animH3.SetBool("PlantaRueda", true);
+            }
+          
+
+        }
+        else
+        {
+            animH3.SetBool("PlantaRueda", false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            if (semilla && tipo == 2)
+            {
+
+                animH4.SetBool("Chasis", true);
+            }
+
+
+        }
+        else
+        {
+            animH4.SetBool("Chasis", false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            if (semilla && tipo == 3)
+            {
+
+                animH5.SetBool("Motor", true);
+            }
+
+
+        }
+        else
+        {
+            animH5.SetBool("Motor", false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            if (bidon )
+            {
+
+                animh6.SetBool("Galon", true);
+            }
+
+
+        }
+        else
+        {
+            animh6.SetBool("Galon", false);
+        }
     }
     void Raycast()
     {
@@ -211,6 +278,7 @@ public class PlayerController : MonoBehaviour
                     {
                         if (tipo == 1 && managerItems.ruedasSiembra[0]>=1)
                         {
+                            //rueda
                             instanPosition = hit.collider.gameObject.transform;
 
                             Instantiate(semillaPref[0], instanPosition.position + offset, Quaternion.identity);
@@ -226,6 +294,7 @@ public class PlayerController : MonoBehaviour
                         
                         if (tipo == 2&& managerItems.chasisSiembra[0] >= 1)
                         {
+                            //chasis
                             instanPosition = hit.collider.gameObject.transform;
 
                             Instantiate(semillaPref[1], instanPosition.position + offset, Quaternion.identity);
@@ -239,6 +308,7 @@ public class PlayerController : MonoBehaviour
                         }
                         if (tipo == 3 && managerItems.motorSiembra[0]>=1)
                         {
+                            //motor
                             instanPosition = hit.collider.gameObject.transform;
 
                             Instantiate(semillaPref[2], instanPosition.position + offset, Quaternion.identity);

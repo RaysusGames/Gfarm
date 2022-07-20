@@ -11,7 +11,7 @@ public class TimerEvent : MonoBehaviour
     public Material dia;
     public Material medioDia;
     public Material noche;
-
+    public GameObject[] estado;
     private void OnEnable()
     {
         TimeManager.OnMinuteChanged += TimeCheck;
@@ -42,18 +42,29 @@ public class TimerEvent : MonoBehaviour
         {
             
             RenderSettings.skybox = dia;
+            estado[0].SetActive(true);
+            estado[1].SetActive(false);
+            estado[2].SetActive(false);
+
+
         }
         //MedioDia
         if (TimeManager.Hour == 18 && TimeManager.Minute >= 00)
         {
             Debug.Log("s");
             RenderSettings.skybox = medioDia;
+            estado[0].SetActive(false);
+            estado[1].SetActive(true);
+            estado[2].SetActive(false);
         }
         //Noche
         if (TimeManager.Hour == 21 && TimeManager.Minute >= 00)
         {
             Debug.Log("s");
             RenderSettings.skybox = noche;
+            estado[0].SetActive(false);
+            estado[1].SetActive(false);
+            estado[2].SetActive(true);
         }
     }
 }

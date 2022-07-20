@@ -15,7 +15,7 @@ public class RingMenu : MonoBehaviour
     public PlayerController playerController;
    
     // Herramientas
-    public GameObject H1,H2,H3,H4;
+    public GameObject H1,H2,H3,H4,H5,H6;
     public Animator ChangeArma;
     public bool cambio;
     private void Start()
@@ -86,16 +86,34 @@ public class RingMenu : MonoBehaviour
                 playerController.semilla = false;
                 playerController.bugia = true;
                 playerController.cosecha = false;
+                playerController.bidon = false;
+
                 //Herramientas
                 H1.SetActive(true);
                H2.SetActive(false);
-              
-               
+                H3.SetActive(false);
+                H4.SetActive(false);
+                H5.SetActive(false);
+                H6.SetActive(false);
+
+
             }
 
             if (activeElement == 1)
             {
-              
+                ChangeArma.SetInteger("Changeh", 6);
+                playerController.cosecha = false;
+                playerController.bugia = false;
+                playerController.semilla = false;
+                playerController.bidon = true;
+
+
+                H1.SetActive(false);
+                H2.SetActive(false);
+                H3.SetActive(false);
+                H4.SetActive(false);
+                H5.SetActive(false);
+                H6.SetActive(true);
                 //Agua
             }
             if (activeElement == 2)
@@ -105,46 +123,67 @@ public class RingMenu : MonoBehaviour
                 playerController.cosecha = true;
                 playerController.bugia = false;
                 playerController.semilla = false;
+                playerController.bidon = false;
                 //Herramientas
                 H1.SetActive(false);
                 H2.SetActive(true);
-              
-               
+                H3.SetActive(false);
+                H4.SetActive(false);
+                H5.SetActive(false);
+                H6.SetActive(false);
+
 
             }
             if (activeElement == 3)
             {
+                //motor
+                ChangeArma.SetInteger("Changeh", 5);
                 playerController.bugia = false;
                 playerController.cosecha = false;
                 playerController.semilla = true;
+                playerController.bidon = false;
                 playerController.tipo = 3;
                 //Herramientas
                 H1.SetActive(false);
                 H2.SetActive(false);
+                H3.SetActive(false);
+                H4.SetActive(false);
+                H5.SetActive(true);
+                H6.SetActive(false);
             }
             if (activeElement == 4)
             {
                 //Chasis
+                ChangeArma.SetInteger("Changeh", 4);
 
                 playerController.bugia = false;
                 playerController.cosecha = false;
                 playerController.semilla = true;
+                playerController.bidon = false;
                 playerController.tipo = 2;
                 //Herramientas
                 H1.SetActive(false);
                 H2.SetActive(false);
-                
-
+                H3.SetActive(false);
+                H4.SetActive(true);
+                H5.SetActive(false);
+                H6.SetActive(false);
             }
             if (activeElement == 5)
             {
+                ChangeArma.SetInteger("Changeh", 3);
                 playerController.bugia = false;
                 playerController.cosecha = false;
                 playerController.semilla = true;
+                playerController.bidon = false;
                 playerController.tipo = 1;
                 //Herramientas
                 H1.SetActive(false);
                 H2.SetActive(false);
+                H3.SetActive(true);
+                H4.SetActive(false);
+                H5.SetActive(false);
+                H6.SetActive(false);
                
             }
             // playerAnimator.SetTrigger(ringAnimations[activeElement].name);
