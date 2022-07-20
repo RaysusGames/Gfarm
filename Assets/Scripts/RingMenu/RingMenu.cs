@@ -137,12 +137,13 @@ public class RingMenu : MonoBehaviour
             if (activeElement == 3)
             {
                 //motor
+                playerController.tipo = 3;
                 ChangeArma.SetInteger("Changeh", 5);
                 playerController.bugia = false;
                 playerController.cosecha = false;
                 playerController.semilla = true;
                 playerController.bidon = false;
-                playerController.tipo = 3;
+                
                 //Herramientas
                 H1.SetActive(false);
                 H2.SetActive(false);

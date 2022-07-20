@@ -18,7 +18,7 @@ public class Compras : MonoBehaviour
     public bool entroMotor;
     private void Update()
     {
-        if (entroRueda && Input.GetKey(KeyCode.Alpha1))
+        if (entroRueda && Input.GetKey(KeyCode.E))
         {
             animsObject.SetBool("Ruedas", true);
             diner.RestDinner(900);
@@ -27,7 +27,7 @@ public class Compras : MonoBehaviour
             Comprar.SetActive(false);
             entroRueda = false;
         }
-        if (entroChasis && Input.GetKey(KeyCode.Alpha1))
+        if (entroChasis && Input.GetKey(KeyCode.E))
         {
             animsObject.SetBool("Chasis", true);
             diner.RestDinner(1000);
@@ -36,7 +36,7 @@ public class Compras : MonoBehaviour
             entroChasis = false;
         }
 
-        if (entroMotor && Input.GetKey(KeyCode.Alpha1))
+        if (entroMotor && Input.GetKey(KeyCode.E))
         {
 
             animsObject.SetBool("Motor", true);

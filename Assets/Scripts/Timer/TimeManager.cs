@@ -18,7 +18,7 @@ public class TimeManager : MonoBehaviour
 
     void Start()
     {
-        //PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
         Minute = PlayerPrefs.GetInt("Date_Minutes");
         Hour = PlayerPrefs.GetInt("Date_Hours");
         Dias = PlayerPrefs.GetInt("Date_Days");

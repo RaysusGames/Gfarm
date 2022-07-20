@@ -18,6 +18,8 @@ public class RuedaPlantada : MonoBehaviour
     private float minuteToRealTime = 0.5f;
     [SerializeField]private float timer;
 
+
+
     public bool on;
 
     public string tagUsable;
@@ -47,7 +49,7 @@ public class RuedaPlantada : MonoBehaviour
             Debug.Log(Dias);
             //TIMER
             Debug.Log(timer);
-            timer -= Time.deltaTime * 100;
+            timer -= Time.deltaTime * 10;
             if (timer <= 0)
             {
                 Minute++;

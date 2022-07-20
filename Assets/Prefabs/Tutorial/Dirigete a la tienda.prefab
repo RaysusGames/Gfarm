@@ -102,7 +102,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Dirigete a la tienda
+  m_text: Compra semillas en la tienda y cultivalas.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 600933ef2c3bd124ca3739605501cdf7, type: 2}
   m_sharedMaterial: {fileID: -5485844920144776605, guid: 600933ef2c3bd124ca3739605501cdf7,
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -7.1681976, y: 0, z: -6.3095074, w: -10.117522}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
