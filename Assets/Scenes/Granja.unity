@@ -9197,7 +9197,7 @@ GameObject:
   - component: {fileID: 212133816}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Tierra
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11426,7 +11426,7 @@ GameObject:
   - component: {fileID: 261183899}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Tierra
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14556,7 +14556,7 @@ GameObject:
   - component: {fileID: 316621099}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Tierra
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19349,7 +19349,7 @@ GameObject:
   - component: {fileID: 395042888}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Tierra
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26278,7 +26278,7 @@ GameObject:
   - component: {fileID: 576453610}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Tierra
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28776,7 +28776,7 @@ GameObject:
   - component: {fileID: 626542150}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Tierra
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46312,7 +46312,7 @@ GameObject:
   - component: {fileID: 1006535728}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Tierra
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51933,7 +51933,7 @@ GameObject:
   - component: {fileID: 1118205426}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Tierra
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53171,7 +53171,7 @@ GameObject:
   - component: {fileID: 1145673459}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Tierra
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56318,7 +56318,7 @@ GameObject:
   - component: {fileID: 1215127026}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Tierra
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58890,7 +58890,7 @@ GameObject:
   - component: {fileID: 1294821764}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Tierra
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60492,7 +60492,7 @@ GameObject:
   - component: {fileID: 1335390967}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Tierra
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62768,7 +62768,7 @@ GameObject:
   - component: {fileID: 1370258249}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Tierra
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69258,7 +69258,7 @@ GameObject:
   - component: {fileID: 1514018422}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Tierra
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70985,7 +70985,7 @@ GameObject:
   - component: {fileID: 1543155247}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Tierra
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80074,7 +80074,7 @@ GameObject:
   - component: {fileID: 1740433921}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Tierra
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
